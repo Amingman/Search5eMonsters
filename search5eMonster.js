@@ -45031,7 +45031,7 @@ function getMonsterByAbilityKeyword(monsterObject, keyword) {
     let lower = keyword.toLowerCase()
     try {
         for (ability of monsterObject.special_abilities) {
-            if (ability.desc.includes(camel) || ability.desc.includes(lower)) {
+            if (ability.desc.includes(camel) || ability.desc.includes(lower) || ability.name.includes(camel) || ability.name.includes(lower)) {
                 // return monsterObject.name
                 return true
             }
@@ -45044,12 +45044,14 @@ function getMonsterByAbilityKeyword(monsterObject, keyword) {
 
 }
 
+
+
 function getMonsterByActionsKeyword(monsterObject, keyword) {
     let camel = keyword.charAt(0).toUpperCase() + keyword.slice(1)
     let lower = keyword.toLowerCase()
     try {
         for (action of monsterObject.actions) {
-            if (action.desc.includes(camel) || action.desc.includes(lower)) {
+            if (action.desc.includes(camel) || action.desc.includes(lower) || action.name.includes(camel) || action.name.includes(lower)) {
                 // return monsterObject.name
                 return true
             }
@@ -45067,7 +45069,7 @@ function getMonsterByLActionsKeyword(monsterObject, keyword) {
     let lower = keyword.toLowerCase()
     try {
         for (action of monsterObject.legendary_actions) {
-            if (action.desc.includes(camel) || action.desc.includes(lower)) {
+            if (action.desc.includes(camel) || action.desc.includes(lower) || action.name.includes(camel) || action.name.includes(lower)) {
                 // return monsterObject.name
                 return true
             }
